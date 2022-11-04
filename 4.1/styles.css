@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "StratosSkyeng";
+  font-style: normal;
+  font-weight: 400;
+  src: url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"), url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2") format("woff2");
+}
+body {
+  font-family: "StratosSkyeng";
+  background-color: #004980;
+}
+
+.center {
+  margin-top: 15%;
+  margin-left: calc(50% - 280px);
+  margin-right: calc(50% - 280px);
+}
+
+.main__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 55px;
+  max-width: 480px;
+  max-height: 460px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  background-color: #C2F5FF;
+  border: 0px;
+  border-radius: 12px;
+}
+.main__title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #004980;
+  max-width: 208px;
+  text-align: center;
+}
+.main__choose {
+  display: flex;
+  align-content: center;
+  gap: 25px;
+}
+.main__choose_button {
+  height: 100px;
+  width: 100px;
+  color: #0080C1;
+  font-size: 64px;
+  font-weight: 400;
+  background-color: white;
+  border-radius: 12px;
+  border: 0px;
+  transition: all 0.3s;
+}
+.main__choose_button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  border: 1px solid #0080C1;
+  box-shadow: 7px 7px grey;
+}
+.main__play-button {
+  width: 250px;
+  height: 50px;
+  border: 0px;
+  border-radius: 12px;
+  background-color: #7AC100;
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  transition: all 0.3s;
+}
+.main__play-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  border: 2px solid #0080C1;
+}/*# sourceMappingURL=styles.css.map */
