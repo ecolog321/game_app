@@ -7,7 +7,7 @@
   font-family: "StratosSkyeng";
   font-style: normal;
   font-weight: 400;
-  src: url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"), url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2") format("woff2");
+  src: local("StratosSkyeng"), url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"), url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2") format("woff2");
 }
 body {
   font-family: "StratosSkyeng";
@@ -78,4 +78,10 @@ body {
   transform: scale(1.05);
   cursor: pointer;
   border: 2px solid #0080C1;
+}
+
+.choosen {
+  background-color: black;
+  transition: all 0.3s;
+  transform: scale(1.05);
 }/*# sourceMappingURL=styles.css.map */

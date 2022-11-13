@@ -22,6 +22,8 @@ body {
     margin-right: calc(50% - 280px);
 }
 
+
+
 .main {
     &__box {
         display: flex;
@@ -88,4 +90,10 @@ body {
             border: 2px solid #0080C1;
         }
     }
+}
+
+.choosen {
+    background-color: black;
+    transition: all 0.3s;
+    transform: scale(1.05);
 }
