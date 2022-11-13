@@ -7,7 +7,7 @@
     font-family: 'StratosSkyeng';
     font-style: normal;
     font-weight: 400;
-    src: url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"),
+    src: local('StratosSkyeng'), url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"),
         url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2") format("woff2");
 }
 
