@@ -1,99 +1,98 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 @font-face {
-    font-family: 'StratosSkyeng';
-    font-style: normal;
-    font-weight: 400;
-    src: local('StratosSkyeng'), url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"),
-        url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2") format("woff2");
+  font-family: StratosSkyeng;
+  src: local("StratosSkyeng"),
+    url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff")
+      format("woff"),
+    url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2")
+      format("woff2");
 }
 
 body {
-    font-family: 'StratosSkyeng';
-    background-color: #004980;
+  font-family: "StratosSkyeng";
+  background-color: #004980;
 }
 
 .center {
-    margin-top: 15%;
-    margin-left: calc(50% - 280px);
-    margin-right: calc(50% - 280px);
+  margin-top: 15%;
+  margin-left: calc(50% - 280px);
+  margin-right: calc(50% - 280px);
 }
 
-
-
 .main {
-    &__box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 55px;
-        max-width: 480px;
-        max-height: 460px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        box-sizing: border-box;
-        background-color: #C2F5FF;
-        border: 0px;
-        border-radius: 12px;
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
+    max-width: 480px;
+    max-height: 460px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+    background-color: #c2f5ff;
+    border: 0px;
+    border-radius: 12px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 400;
+    color: #004980;
+    max-width: 208px;
+    text-align: center;
+  }
+
+  &__choose {
+    display: flex;
+    align-content: center;
+    gap: 25px;
+
+    &_button {
+      height: 100px;
+      width: 100px;
+      color: #0080c1;
+      font-size: 64px;
+      font-weight: 400;
+      background-color: white;
+      border-radius: 12px;
+      border: 0px;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        border: 1px solid #0080c1;
+        box-shadow: 7px 7px grey;
+      }
     }
+  }
 
-    &__title {
-        font-size: 40px;
-        font-weight: 400;
-        color: #004980;
-        max-width: 208px;
-        text-align: center;
+  &__play-button {
+    width: 250px;
+    height: 50px;
+    border: 0px;
+    border-radius: 12px;
+    background-color: #7ac100;
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+      border: 2px solid #0080c1;
     }
-
-    &__choose {
-        display: flex;
-        align-content: center;
-        gap: 25px;
-
-        &_button {
-            height: 100px;
-            width: 100px;
-            color: #0080C1;
-            font-size: 64px;
-            font-weight: 400;
-            background-color: white;
-            border-radius: 12px;
-            border: 0px;
-            transition: all 0.3s;
-
-            &:hover {
-                transform: scale(1.05);
-                cursor: pointer;
-                border: 1px solid #0080C1;
-                box-shadow: 7px 7px grey;
-            }
-        }
-    }
-
-    &__play-button {
-        width: 250px;
-        height: 50px;
-        border: 0px;
-        border-radius: 12px;
-        background-color: #7AC100;
-        font-size: 24px;
-        font-weight: 400;
-        color: white;
-        transition: all 0.3s;
-
-        &:hover {
-            transform: scale(1.05);
-            cursor: pointer;
-            border: 2px solid #0080C1;
-        }
-    }
+  }
 }
 
 .choosen {
-    background-color: black;
-    transition: all 0.3s;
-    transform: scale(1.05);
+  background-color: black;
+  transition: all 0.3s;
+  transform: scale(1.05);
 }
