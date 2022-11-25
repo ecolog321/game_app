@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Стартовая страница</title>
   </head>
-
   <body>
     <div class="main__box center">
       <h1 class="main__title">Выбери сложность</h1>
@@ -24,20 +23,16 @@
       </div>
       <button class="main__play-button">Старт</button>
     </div>
-    <script src="/game_app/src/template.js"></script>
+    <script src="../src/cards.js"></script>
+    <script src="../src/template.js"></script>
     <script>
       window.application = {
-        cardsDifficult: {
-          diff: undefined,
-          cards: undefined,
-          status: undefined,
-          time: undefined,
-        },
+        diff: undefined,
+        cards: undefined,
+        status: undefined,
+        time: undefined,
       }
     </script>
     <script src="index.js"></script>
-    <script>
-      templateEngine(startSrceenTemplate(window.application.cards))
-    </script>
   </body>
 </html>
