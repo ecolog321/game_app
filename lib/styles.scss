@@ -1,20 +1,43 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
 @font-face {
   font-family: StratosSkyeng;
   src: local("StratosSkyeng"),
-    url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff")
+    url("C:/Users/xipic/Desktop/skypro/game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff")
       format("woff"),
-    url("game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2")
+    url("C:/Users/xipic/Desktop/skypro/game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2")
       format("woff2");
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: StratosSkyeng;
+}
+
+$main-color: #004980;
+$second-color: white;
 
 body {
   font-family: "StratosSkyeng";
   background-color: #004980;
+  display: flex;
+  justify-content: center;
+}
+
+.hide {
+  background-image: url(../cards_images/Mask\ group.svg);
+}
+
+.time_text {
+  color: $second-color;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.time_numbers {
+  color: $second-color;
+  font-weight: 400;
+  font-size: 64px;
 }
 
 .center {
@@ -42,7 +65,7 @@ body {
   &__title {
     font-size: 40px;
     font-weight: 400;
-    color: #004980;
+    color: $main-color;
     max-width: 208px;
     text-align: center;
   }
@@ -51,6 +74,8 @@ body {
     display: flex;
     align-content: center;
     gap: 25px;
+    padding-left: 70px;
+    padding-right: 70px;
 
     &_button {
       height: 100px;
@@ -58,7 +83,7 @@ body {
       color: #0080c1;
       font-size: 64px;
       font-weight: 400;
-      background-color: white;
+      background-color: $second-color;
       border-radius: 12px;
       border: 0px;
       transition: all 0.3s;
@@ -87,6 +112,73 @@ body {
       transform: scale(1.05);
       cursor: pointer;
       border: 2px solid #0080c1;
+    }
+  }
+}
+
+.info__block {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+  padding-left: 22px;
+  padding-right: 22px;
+
+  &_time {
+    display: flex;
+    gap: 5px;
+    padding-top: 25px;
+  }
+
+  &_button {
+    height: 50px;
+    width: 245px;
+    background-color: #7ac100;
+    color: $second-color;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    border-radius: 12px;
+    border: none;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+      border: 2px solid #0080c1;
+    }
+  }
+}
+
+.game__screen {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 1110px;
+}
+
+.game__block {
+  padding-top: 35px;
+  padding-bottom: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  &-card {
+    height: 135px;
+    width: 95px;
+    border-radius: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.18, 0.884, 0.33, 1.275);
+
+    &:hover {
+      transform: scale(1.15);
     }
   }
 }
