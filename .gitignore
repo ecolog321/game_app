@@ -1,3 +1,4 @@
 .webpack.config.js
 cards_images/
 node_modules/
+dist/

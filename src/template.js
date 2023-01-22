@@ -1,12 +1,12 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
-function templateEngine(block) {
+export function templateEngine(block) {
   if (block === undefined || block === null || block === false) {
-    return document.createTextNode("")
+    return document.createTextNode('')
   }
   if (
-    typeof block === "string" ||
-    typeof block === "number" ||
+    typeof block === 'string' ||
+    typeof block === 'number' ||
     block === true
   ) {
     return document.createTextNode(block)

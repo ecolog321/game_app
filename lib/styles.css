@@ -1,169 +1,202 @@
 @font-face {
-  font-family: StratosSkyeng;
-  src: local("StratosSkyeng"), url("C:/Users/xipic/Desktop/skypro/game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff") format("woff"), url("C:/Users/xipic/Desktop/skypro/game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2") format("woff2");
+    font-family: StratosSkyeng;
+    src: local('StratosSkyeng'),
+        url('C:/Users/xipic/Desktop/skypro/game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff')
+            format('woff'),
+        url('C:/Users/xipic/Desktop/skypro/game_app/statosskyeng-v1.001/Web fonts/stratosskyengweb-regular.woff2')
+            format('woff2');
 }
+
 * {
-  padding: 0;
-  margin: 0;
-  font-family: StratosSkyeng;
+    margin: 0;
+    padding: 0;
+    font-family: StratosSkyeng;
 }
 
 body {
-  font-family: "StratosSkyeng";
-  background-color: #004980;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    font-family: StratosSkyeng;
+    background-color: #004980;
 }
 
 .hide {
-  background-image: url(../cards_images/Mask\ group.svg);
+    display: none;
 }
 
 .time_text {
-  color: white;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
 }
 
 .time_numbers {
-  color: white;
-  font-weight: 400;
-  font-size: 64px;
+    color: white;
+    font-weight: 400;
+    font-size: 64px;
 }
 
 .center {
-  margin-top: 15%;
-  margin-left: calc(50% - 280px);
-  margin-right: calc(50% - 280px);
+    margin-top: 15%;
+    margin-right: calc(50% - 280px);
+    margin-left: calc(50% - 280px);
 }
 
 .main__box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 55px;
-  max-width: 480px;
-  max-height: 460px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  box-sizing: border-box;
-  background-color: #c2f5ff;
-  border: 0px;
-  border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 480px;
+    max-height: 460px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #c2f5ff;
+    border: 0;
+    border-radius: 12px;
 }
+
 .main__title {
-  font-size: 40px;
-  font-weight: 400;
-  color: #004980;
-  max-width: 208px;
-  text-align: center;
+    max-width: 208px;
+    color: #004980;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
 }
+
 .main__choose {
-  display: flex;
-  align-content: center;
-  gap: 25px;
-  padding-left: 70px;
-  padding-right: 70px;
+    display: flex;
+    gap: 25px;
+    align-content: center;
+    padding-right: 70px;
+    padding-left: 70px;
 }
+
 .main__choose_button {
-  height: 100px;
-  width: 100px;
-  color: #0080c1;
-  font-size: 64px;
-  font-weight: 400;
-  background-color: white;
-  border-radius: 12px;
-  border: 0px;
-  transition: all 0.3s;
+    width: 100px;
+    height: 100px;
+    color: #0080c1;
+    font-weight: 400;
+    font-size: 64px;
+    background-color: white;
+    border: 0;
+    border-radius: 12px;
+    transition: all 0.3s;
 }
+
 .main__choose_button:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  border: 1px solid #0080c1;
-  box-shadow: 7px 7px grey;
+    border: 1px solid #0080c1;
+    box-shadow: 7px 7px grey;
+    transform: scale(1.05);
+    cursor: pointer;
 }
+
 .main__play-button {
-  width: 250px;
-  height: 50px;
-  border: 0px;
-  border-radius: 12px;
-  background-color: #7ac100;
-  font-size: 24px;
-  font-weight: 400;
-  color: white;
-  transition: all 0.3s;
+    width: 250px;
+    height: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 24px;
+    background-color: #7ac100;
+    border: 0;
+    border-radius: 12px;
+    transition: all 0.3s;
 }
+
 .main__play-button:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  border: 2px solid #0080c1;
+    border: 2px solid #0080c1;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .info__block {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  align-items: center;
-  padding-left: 22px;
-  padding-right: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding-right: 22px;
+    padding-left: 22px;
 }
+
 .info__block_time {
-  display: flex;
-  gap: 5px;
-  padding-top: 25px;
+    display: flex;
+    gap: 5px;
+    padding-top: 25px;
 }
+
 .info__block_button {
-  height: 50px;
-  width: 245px;
-  background-color: #7ac100;
-  color: white;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 32px;
-  border-radius: 12px;
-  border: none;
-  transition: all 0.3s;
+    width: 245px;
+    height: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    background-color: #7ac100;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s;
 }
+
 .info__block_button:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-  border: 2px solid #0080c1;
+    border: 2px solid #0080c1;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .game__screen {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  max-width: 1110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1110px;
 }
 
 .game__block {
-  padding-top: 35px;
-  padding-bottom: 50px;
-  padding-left: 25px;
-  padding-right: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding-top: 35px;
+    padding-right: 25px;
+    padding-bottom: 50px;
+    padding-left: 25px;
 }
+
 .game__block-card {
-  height: 135px;
-  width: 95px;
-  border-radius: 4px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  transform-style: preserve-3d;
-  transition: all 2s cubic-bezier(0.18, 0.884, 0.33, 1.275);
+    width: 95px;
+    height: 135px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 4px;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.18, 0.884, 0.33, 1.275);
 }
-.game__block-card:hover {
-  transform: scale(1.15);
+
+.game__block-card-suit {
+    width: 95px;
+    height: 135px;
+    background-color: #c2f5ff;
+    border-radius: 4px;
+}
+
+.game__block-card-suit:hover {
+    transform: scale(1.15);
+}
+
+.game__block-card-face {
+    width: 95px;
+    height: 135px;
+    border-radius: 4px;
+}
+
+.game__block-card-face:hover {
+    transform: scale(1.15);
 }
 
 .choosen {
-  background-color: black;
-  transition: all 0.3s;
-  transform: scale(1.05);
-}/*# sourceMappingURL=styles.css.map */
+    background-color: black;
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
