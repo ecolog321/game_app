@@ -1,45 +1,45 @@
 {
-  "name": "skypro",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write game_app/",
-    "lint:css": "stylelint ./game_app/**/*.css",
-    "lint:js": "eslint ./game_app/**/*.js",
-    "lint": "npm run lint:js && npm run lint:css",
-    "prepare": "husky install",
-    "build": "NODE_ENV=production webpack",
-    "start": "webpack-dev-server --open"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.7.2",
-    "css-minimizer-webpack-plugin": "^4.2.2",
-    "eslint": "8.27.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-prettier": "4.2.1",
-    "html-webpack-plugin": "^5.5.0",
-    "husky": "8.0.2",
-    "mini-css-extract-plugin": "^2.7.0",
-    "prettier": "2.7.1",
-    "style-loader": "^3.3.1",
-    "stylelint": "^14.15.0",
-    "stylelint-config-prettier": "^9.0.4",
-    "stylelint-config-standard": "^29.0.0",
-    "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-order": "5.0.0",
-    "stylelint-prettier": "2.0.0",
-    "stylelint-scss": "4.3.0",
-    "webpack": "5.75.0",
-    "webpack-cli": "5.0.0",
-    "webpack-dev-server": "^4.11.1"
-  }
+    "name": "game_app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write ./lib",
+        "lint:css": "stylelint ./**/*.scss --fix",
+        "lint:js": "eslint ./**/*.js --fix",
+        "lint": "npm run lint:js && npm run lint:css",
+        "prepare": "husky install",
+        "build": "cross-env NODE_ENV=production webpack",
+        "start": "webpack-dev-server --open"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "copy-webpack-plugin": "^11.0.0",
+        "cross-env": "^7.0.3",
+        "css-loader": "^6.7.2",
+        "css-minimizer-webpack-plugin": "^4.2.2",
+        "eslint": "8.27.0",
+        "eslint-config-prettier": "8.5.0",
+        "eslint-plugin-prettier": "4.2.1",
+        "html-webpack-plugin": "^5.5.0",
+        "husky": "8.0.2",
+        "mini-css-extract-plugin": "^2.7.0",
+        "prettier": "^2.8.1",
+        "stylelint": "^14.16.1",
+        "stylelint-config-prettier": "^9.0.4",
+        "stylelint-config-rational-order": "^0.1.2",
+        "stylelint-config-standard": "^29.0.0",
+        "stylelint-order": "^6.0.1",
+        "stylelint-prettier": "^2.0.0",
+        "stylelint-scss": "^4.3.0",
+        "webpack": "5.75.0",
+        "webpack-cli": "5.0.0",
+        "webpack-dev-server": "^4.11.1"
+    }
 }
