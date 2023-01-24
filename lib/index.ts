@@ -1,3 +1,18 @@
+declare global {
+    interface Window {
+        application?: any
+    }
+}
+
+declare global {
+    interface EventTarget {
+        name?: any
+        classList?: any
+        id?: any
+        data?: any
+    }
+}
+
 const diffButtons = document.querySelectorAll('.main__choose_button')
 const startButton = document.querySelector('.main__play-button')
 
@@ -100,12 +115,13 @@ function startSrceenTemplate(cardsTemplate) {
 
 diffButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
+        console.log('click')
         diffButtons.forEach((button) => {
             button.classList.remove('choosen')
         })
         const target = event.target
         window.application.diff = target.name
-        window.application.cards = target.dataset.cards
+        window.application.cards = target.id
         target.classList.add('choosen')
     })
 })
@@ -150,7 +166,7 @@ startButton.addEventListener('click', () => {
     let idCards = []
 
     cardsSuits.forEach((el) => {
-        el.addEventListener('click', (event) => {
+        el.addEventListener('click', (event: any) => {
             const target = event.target
             target.classList.add('hide')
             target.nextElementSibling.classList.remove('hide')
