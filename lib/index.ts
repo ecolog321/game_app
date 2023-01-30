@@ -13,6 +13,10 @@ declare global {
     }
 }
 
+let sec: any = 0,
+    min: any = 0,
+    t: any
+
 const diffButtons = document.querySelectorAll('.main__choose_button')
 const startButton = document.querySelector('.main__play-button')
 
@@ -69,7 +73,7 @@ function startSrceenTemplate(cardsTemplate) {
                                     },
                                     {
                                         tag: 'h1',
-                                        cls: 'time__numbers',
+                                        cls: 'time__numbers-min',
                                         content: '00',
                                     },
                                 ],
@@ -77,7 +81,7 @@ function startSrceenTemplate(cardsTemplate) {
                             {
                                 tag: 'p',
                                 cls: 'time__numbers',
-                                content: '.',
+                                content: ':',
                             },
                             {
                                 tag: 'div',
@@ -90,7 +94,7 @@ function startSrceenTemplate(cardsTemplate) {
                                     },
                                     {
                                         tag: 'h1',
-                                        cls: 'time__numbers',
+                                        cls: 'time__numbers-sec',
                                         content: '00',
                                     },
                                 ],
@@ -113,9 +117,168 @@ function startSrceenTemplate(cardsTemplate) {
     }
 }
 
+function winScreenTemplate(min, sec) {
+    return {
+        tag: 'div',
+        cls: 'end__block',
+        content: [
+            {
+                tag: 'img',
+                cls: 'end__block_image',
+                attrs: {
+                    src: '../cards_images/win.svg',
+                },
+            },
+            {
+                tag: 'h1',
+                cls: 'end__block_text',
+                content: 'Вы выиграли!',
+            },
+            {
+                tag: 'div',
+                cls: 'end__block_time',
+                content: [
+                    {
+                        tag: 'h2',
+                        cls: 'end__block_time-text',
+                        content: 'Затраченное время',
+                    },
+                    {
+                        tag: 'div',
+                        cls: 'info__block_time',
+                        content: [
+                            {
+                                tag: 'div',
+                                cls: 'info__block-left',
+                                content: [
+                                    {
+                                        tag: 'p',
+                                        cls: 'time__text',
+                                        content: 'min',
+                                    },
+                                    {
+                                        tag: 'h1',
+                                        cls: 'time__numbers-min',
+                                        content: min > 9 ? min : '0' + min,
+                                    },
+                                ],
+                            },
+                            {
+                                tag: 'p',
+                                cls: 'time__numbers',
+                                content: ':',
+                            },
+                            {
+                                tag: 'div',
+                                cls: 'info__block-right',
+                                content: [
+                                    {
+                                        tag: 'p',
+                                        cls: 'time__text',
+                                        content: 'sec',
+                                    },
+                                    {
+                                        tag: 'h1',
+                                        cls: 'time__numbers-sec',
+                                        content: sec > 9 ? sec : '0' + sec,
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                tag: 'button',
+                cls: 'end__block_button',
+                content: 'Играть снова!',
+            },
+        ],
+    }
+}
+
+function loseScreenTemplate(min, sec) {
+    return {
+        tag: 'div',
+        cls: 'end__block',
+        content: [
+            {
+                tag: 'img',
+                cls: 'end__block_image',
+                attrs: {
+                    src: '../cards_images/lose.svg',
+                },
+            },
+            {
+                tag: 'h1',
+                cls: 'end__block_text',
+                content: 'Вы проиграли!',
+            },
+            {
+                tag: 'div',
+                cls: 'end__block_time',
+                content: [
+                    {
+                        tag: 'h2',
+                        cls: 'end__block_time-text',
+                        content: 'Затраченное время',
+                    },
+                    {
+                        tag: 'div',
+                        cls: 'info__block_time',
+                        content: [
+                            {
+                                tag: 'div',
+                                cls: 'info__block-left',
+                                content: [
+                                    {
+                                        tag: 'p',
+                                        cls: 'time__text',
+                                        content: 'min',
+                                    },
+                                    {
+                                        tag: 'h1',
+                                        cls: 'time__numbers-min',
+                                        content: min > 9 ? min : '0' + min,
+                                    },
+                                ],
+                            },
+                            {
+                                tag: 'p',
+                                cls: 'time__numbers',
+                                content: ':',
+                            },
+                            {
+                                tag: 'div',
+                                cls: 'info__block-right',
+                                content: [
+                                    {
+                                        tag: 'p',
+                                        cls: 'time__text',
+                                        content: 'sec',
+                                    },
+                                    {
+                                        tag: 'h1',
+                                        cls: 'time__numbers-sec',
+                                        content: sec > 9 ? sec : '0' + sec,
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            {
+                tag: 'button',
+                cls: 'end__block_button',
+                content: 'Играть снова!',
+            },
+        ],
+    }
+}
+
 diffButtons.forEach((button) => {
     button.addEventListener('click', (event) => {
-        console.log('click')
         diffButtons.forEach((button) => {
             button.classList.remove('choosen')
         })
@@ -148,6 +311,30 @@ startButton.addEventListener('click', () => {
 
     screen.appendChild(templateEngine(startSrceenTemplate(playCards)))
 
+    const gameArea = document.querySelector('.game__screen')
+    const timeMin = document.querySelector('.time__numbers-min')
+    const timeSec = document.querySelector('.time__numbers-sec')
+    const resetButton = document.querySelector('.info__block_button')
+
+    function tick() {
+        sec++
+        if (sec >= 60) {
+            sec = 0
+            min++
+        }
+    }
+
+    function add() {
+        tick()
+        timeMin.textContent = min > 9 ? min : '0' + min
+        timeSec.textContent = sec > 9 ? sec : '0' + sec
+
+        timer()
+    }
+    function timer() {
+        t = setTimeout(add, 1000)
+    }
+
     const cardsSuits = document.querySelectorAll('.game__block-card-suit')
     cardsSuits.forEach((card) => {
         card.classList.add('hide')
@@ -161,10 +348,11 @@ startButton.addEventListener('click', () => {
             })
             element.classList.add('hide')
         })
+        timer()
     }, 5000)
 
     let idCards = []
-
+    let result = 0
     cardsSuits.forEach((el) => {
         el.addEventListener('click', (event: any) => {
             const target = event.target
@@ -172,17 +360,58 @@ startButton.addEventListener('click', () => {
             target.nextElementSibling.classList.remove('hide')
             idCards.push(target.id)
 
-            setTimeout(() => {
-                if (idCards.length > 1) {
-                    if (idCards[0] === idCards[1]) {
-                        alert('Вы угадали, так держать')
+            if (idCards.length > 1) {
+                if (idCards[0] === idCards[1]) {
+                    result++
+                    idCards = []
+                    if (result === cardsSuits.length / 2) {
+                        screen.appendChild(
+                            templateEngine(winScreenTemplate(min, sec))
+                        )
+
                         idCards = []
-                    } else {
-                        alert('Вы не справились, попробуйте снова!')
-                        idCards = []
+                        clearTimeout(t)
+                        gameArea.classList.add('oppacity')
                     }
+                } else {
+                    screen.appendChild(
+                        templateEngine(loseScreenTemplate(min, sec))
+                    )
+                    idCards = []
+                    clearTimeout(t)
+                    gameArea.classList.add('oppacity')
                 }
-            }, 300)
+                const newGameButton =
+                    document.querySelector('.end__block_button')
+                const endBlock = document.querySelector('.end__block')
+
+                newGameButton.addEventListener('click', () => {
+                    location.reload()
+                })
+            }
         })
+    })
+
+    resetButton.addEventListener('click', () => {
+        clearTimeout(t)
+        gameArea.classList.remove('oppacity')
+        timeMin.textContent = '00'
+        timeSec.textContent = '00'
+        min = 0
+        sec = 0
+        idCards = []
+        result = 0
+        cardsFace.forEach((el) => {
+            el.classList.remove('hide')
+        })
+        setTimeout(() => {
+            cardsFace.forEach((element) => {
+                cardsSuits.forEach((card) => {
+                    card.classList.remove('hide')
+                })
+                element.classList.add('hide')
+            })
+            timer()
+        }, 5000)
     })
 })
