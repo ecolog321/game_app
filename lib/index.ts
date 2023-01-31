@@ -6,7 +6,7 @@ declare global {
 
 declare global {
     interface EventTarget {
-        name?: any
+        name?: string
         classList?: any
         id?: any
         data?: any
@@ -23,6 +23,7 @@ const startButton = document.querySelector('.main__play-button')
 import { templateEngine } from '../src/template'
 import { cards } from '../src/cards'
 import '../lib/styles.css'
+import { HtmlTagObject } from 'html-webpack-plugin'
 
 function renderCards(cards, i) {
     return {
