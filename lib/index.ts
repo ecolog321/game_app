@@ -13,7 +13,7 @@ declare global {
     }
 }
 
-let sec: any = 0,
+let sec: any= 0,
     min: any = 0,
     t: any
 
@@ -118,7 +118,7 @@ function startSrceenTemplate(cardsTemplate) {
     }
 }
 
-function winScreenTemplate(min:number, sec:number) {
+function winScreenTemplate(min: number, sec: number) {
     return {
         tag: 'div',
         cls: 'end__block',
@@ -198,7 +198,7 @@ function winScreenTemplate(min:number, sec:number) {
     }
 }
 
-function loseScreenTemplate(min:number, sec:number) {
+function loseScreenTemplate(min: number, sec: number) {
     return {
         tag: 'div',
         cls: 'end__block',
