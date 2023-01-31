@@ -10,7 +10,7 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write ./lib",
         "lint:css": "stylelint ./**/*.scss --fix",
-        "lint": "npm run lint:css && lint:ts",
+        "lint": "npm run lint:ts",
         "prepare": "husky install",
         "build": "cross-env NODE_ENV=production webpack",
         "start": "webpack-dev-server --open",
