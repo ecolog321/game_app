@@ -9,7 +9,7 @@ declare global {
         name?: string
         classList?: any
         id?: any
-        data?: any
+        data?: string
     }
 }
 
@@ -118,7 +118,7 @@ function startSrceenTemplate(cardsTemplate) {
     }
 }
 
-function winScreenTemplate(min, sec) {
+function winScreenTemplate(min:number, sec:number) {
     return {
         tag: 'div',
         cls: 'end__block',
@@ -198,7 +198,7 @@ function winScreenTemplate(min, sec) {
     }
 }
 
-function loseScreenTemplate(min, sec) {
+function loseScreenTemplate(min:number, sec:number) {
     return {
         tag: 'div',
         cls: 'end__block',
