@@ -13,8 +13,8 @@ declare global {
     }
 }
 
-let sec: any = 0,
-    min: any = 0,
+let sec = 0,
+    min = 0,
     t: number | ReturnType<typeof setTimeout>
 
 const diffButtons = document.querySelectorAll('.main__choose_button')
@@ -314,8 +314,10 @@ startButton.addEventListener('click', () => {
     screen.appendChild(templateEngine(startSrceenTemplate(playCards)))
 
     const gameArea = document.querySelector('.game__screen')
-    const timeMin = document.querySelector('.time__numbers-min')
-    const timeSec = document.querySelector('.time__numbers-sec')
+    const timeMin: Element | ReturnType<typeof Object> =
+        document.querySelector('.time__numbers-min')
+    const timeSec: Element | ReturnType<typeof Object> =
+        document.querySelector('.time__numbers-sec')
     const resetButton = document.querySelector('.info__block_button')
 
     function tick() {
