@@ -1,21 +1,21 @@
 declare global {
     interface Window {
-        application?: any
+        application?: ReturnType<typeof Object>
     }
 }
 
 declare global {
     interface EventTarget {
         name?: string
-        classList?: any
+        classList?: ReturnType<typeof Object>
         id?: any
         data?: string
     }
 }
 
-let sec: any= 0,
+let sec: any = 0,
     min: any = 0,
-    t: any
+    t: number | ReturnType<typeof setTimeout>
 
 const diffButtons = document.querySelectorAll('.main__choose_button')
 const startButton = document.querySelector('.main__play-button')
@@ -24,6 +24,7 @@ import { templateEngine } from '../src/template'
 import { cards } from '../src/cards'
 import '../lib/styles.css'
 import { HtmlTagObject } from 'html-webpack-plugin'
+import { node } from 'webpack'
 
 function renderCards(cards, i) {
     return {
@@ -118,7 +119,7 @@ function startSrceenTemplate(cardsTemplate) {
     }
 }
 
-function winScreenTemplate(min: number, sec: number) {
+function winScreenTemplate(min, sec) {
     return {
         tag: 'div',
         cls: 'end__block',
@@ -198,7 +199,7 @@ function winScreenTemplate(min: number, sec: number) {
     }
 }
 
-function loseScreenTemplate(min: number, sec: number) {
+function loseScreenTemplate(min, sec) {
     return {
         tag: 'div',
         cls: 'end__block',
@@ -355,7 +356,7 @@ startButton.addEventListener('click', () => {
     let idCards = []
     let result = 0
     cardsSuits.forEach((el) => {
-        el.addEventListener('click', (event: any) => {
+        el.addEventListener('click', (event: ReturnType<typeof Object>) => {
             const target = event.target
             target.classList.add('hide')
             target.nextElementSibling.classList.remove('hide')
